@@ -1,0 +1,129 @@
+@import "assets/base";
+
+.root {
+  padding: 32px 0;
+  font-size: 16px;
+
+  .country {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_flag,
+    &_infos {
+      width: calc(50% - 70px);
+    }
+
+    &_title {
+      font-weight: $bold;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    &_info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 35px;
+
+      ul {
+        &:first-child {
+          padding-right: 15px;
+        }
+        &:last-child {
+          padding-left: 15px;
+        }
+
+        li {
+          margin-bottom: 16px;
+          font-weight: $light;
+          line-height: 1.2;
+        }
+      }
+    }
+
+    &_borders {
+      margin-top: 60px;
+      display: flex;
+      align-items: flex-start;
+
+      .label {
+        margin-top: 12px;
+      }
+
+      .country_border__countries {
+        margin-left: 15px;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          padding: 8px 27px;
+          border-radius: 3px;
+          background-color: var(--background-1);
+          margin: 4px 8px 4px 0;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.27);
+          transition: 0.15s ease-in-out;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+          }
+        }
+      }
+    }
+
+    @media (max-width: $xlarge) {
+      &_flag,
+      &_infos {
+        width: calc(50% - 25px);
+      }
+      &_borders {
+        margin-top: 45px;
+      }
+    }
+    @media (max-width: $large) {
+      flex-direction: column;
+
+      &_flag,
+      &_infos {
+        width: 100%;
+      }
+
+      &_infos {
+        margin-top: 90px;
+      }
+
+      &_borders {
+        flex-direction: column;
+
+        .country_border__countries {
+          margin-top: 15px;
+          margin-left: 0;
+        }
+      }
+    }
+    @media (max-width: $small) {
+      &_infos {
+        margin-top: 60px;
+      }
+
+      &_info {
+        flex-direction: column;
+        margin-top: 35px;
+
+        ul {
+          padding: 0 !important;
+
+          &:last-child {
+            margin-top: 35px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.label {
+  font-weight: $bold;
+  text-transform: capitalize;
+}

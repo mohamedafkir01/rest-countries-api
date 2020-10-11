@@ -1,0 +1,14 @@
+@import "assets/base";
+
+.nav {
+  display: flex;
+  justify-content: center;
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.27);
+  }
+}

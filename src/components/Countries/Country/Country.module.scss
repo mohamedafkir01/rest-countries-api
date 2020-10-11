@@ -1,0 +1,39 @@
+@import "assets/base";
+
+.country {
+  font-size: 14px;
+  background-color: var(--background-1);
+  border-radius: 5px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.02);
+    // background-color: $active-dark-blue;
+  }
+
+  .content {
+    padding: 25px 30px;
+  }
+
+  &_name {
+    font-size: 16px;
+    font-weight: $bold;
+    letter-spacing: 1px;
+  }
+  &_infos {
+    margin-top: 22px;
+
+    .info {
+      margin-bottom: 10px;
+
+      span {
+        font-weight: $medium-weight;
+        letter-spacing: 0.7px;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "assets/base";
+
+.item {
+  width: 42px;
+  height: 42px;
+  background-color: var(--background-1);
+  display: grid;
+  place-items: center;
+
+  &.disabled {
+    cursor: default;
+    color: var(--disabled-color);
+  }
+
+  &.active {
+    cursor: default;
+    font-weight: $bold;
+  }
+
+  &:not(.disabled):not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: $medium) {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}

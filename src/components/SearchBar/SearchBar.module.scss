@@ -1,0 +1,35 @@
+@import "assets/base";
+
+.searchbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 18px 32px;
+  background-color: var(--background-1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.27);
+
+  .icon {
+    position: absolute;
+    color: var(--input-color);
+    width: 20px;
+  }
+
+  input {
+    margin-left: 40px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    width: 350px;
+    max-width: calc(100% - 40px);
+
+    &,
+    &::placeholder {
+      color: var(--input-color);
+    }
+  }
+
+  @media (max-width: $medium) {
+    width: 100%;
+  }
+}
