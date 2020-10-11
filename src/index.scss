@@ -1,0 +1,68 @@
+@import "assets/base";
+@import "assets/reset";
+
+:root {
+  --background-1: #ffffff;
+  --background-2: #fafafa;
+  --text-color: #111517;
+  --input-color: #858585;
+  --disabled-color: rgba(0, 0, 0, 0.26);
+}
+
+.dark {
+  --background-1: #2b3945;
+  --background-2: #202c37;
+  --text-color: #ffffff;
+  --input-color: #ffffff;
+  --disabled-color: rgba(232, 230, 227, 0.26);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  color: var(--text-color);
+  background-color: var(--background-2);
+
+  &.animated * {
+    transition: 200ms ease-in-out;
+  }
+}
+
+button,
+.btn,
+img {
+  user-select: none;
+}
+
+button,
+.btn {
+  cursor: pointer;
+}
+
+input,
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.container {
+  margin: auto;
+  width: 1170px;
+
+  @media (max-width: $xlarge) {
+    width: 960px;
+  }
+  @media (max-width: $large) {
+    width: 720px;
+  }
+  @media (max-width: $medium) {
+    width: 540px;
+  }
+  @media (max-width: $small) {
+    width: 90%;
+  }
+}
