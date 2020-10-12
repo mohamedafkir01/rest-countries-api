@@ -1,6 +1,9 @@
 @import "assets/base";
 
 .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   color: var(--text-color);
   background-color: var(--background-2);
 }
