@@ -11,8 +11,11 @@
 
   .icon {
     position: absolute;
-    color: var(--input-color);
     width: 20px;
+
+    & > * {
+      color: var(--input-color);
+    }
   }
 
   input {

@@ -7,9 +7,17 @@
   display: grid;
   place-items: center;
 
+  &,
+  &.icon > * > * {
+    color: var(--text-color);
+  }
+
   &.disabled {
     cursor: default;
-    color: var(--disabled-color);
+
+    & > * > * {
+      color: var(--disabled-color);
+    }
   }
 
   &.active {

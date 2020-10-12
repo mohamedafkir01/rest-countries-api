@@ -15,6 +15,13 @@
       width: calc(50% - 70px);
     }
 
+    &_title,
+    &_info ul li,
+    &_info ul li span,
+    &_borders ul li {
+      color: var(--text-color);
+    }
+
     &_title {
       font-weight: $bold;
       font-size: 24px;
@@ -126,4 +133,5 @@
 .label {
   font-weight: $bold;
   text-transform: capitalize;
+  color: var(--text-color);
 }

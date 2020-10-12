@@ -5,11 +5,11 @@
   align-items: center;
 
   .icon {
-    cursor: pointer;
     padding: 10px;
     width: 39px;
     height: 40px;
     border-radius: 50%;
+    cursor: pointer;
     transition: 0.2s ease;
 
     &:hover {
@@ -17,8 +17,12 @@
     }
   }
 
-  .label {
+  .label,
+  .icon > * > * {
     color: var(--text-color);
+  }
+
+  .label {
     margin-left: 5px;
     text-transform: capitalize;
     user-select: none;
