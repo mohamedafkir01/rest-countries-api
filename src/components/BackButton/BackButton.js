@@ -14,7 +14,7 @@ const BackButton = (props) => {
 
   return (
     <button className={cx("btn", styles.btn)} onClick={handleClick}>
-      <ArrowLeft size={18} />
+      <ArrowLeft size={18} className={styles.icon} />
       <span>Back</span>
     </button>
   );

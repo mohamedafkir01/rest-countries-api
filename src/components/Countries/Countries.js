@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Countries.module.scss";
 import Country from "./Country";
+import { Pagination, Empty } from "components";
 import useMedia from "Hooks/useMedia";
 import {
   useSelector,
@@ -25,11 +26,13 @@ const Countries = (props) => {
     // Media queries
     [`(max-width: ${responsive.small}px)`, `(min-width: ${responsive.small + 1}px)`], 
     // Countries to show per page by query
-    [3, COUNTRIES_PER_PAGE], 
+    [5, COUNTRIES_PER_PAGE], 
   )
 
   // State
   const [countries, setCountries] = useState(allCountries);
+  
+  const count = Math.ceil(countries.length / countriesPerPage);
 
   useEffect(updateCountries, [region, searchKeyword, page]);
 
@@ -39,13 +42,21 @@ const Countries = (props) => {
   }
 
   return (
-    <div className={styles.countries}>
-      {countries
-        .slice((page - 1) * countriesPerPage, page * countriesPerPage)
-        .map((country, i) => (
-          <Country key={i} country={country} />
-        ))}
-    </div>
+    !!countries.length
+      ? (
+        <>
+          <div className={styles.countries}>
+            {countries
+              .slice((page - 1) * countriesPerPage, page * countriesPerPage)
+              .map((country, i) => (
+                <Country key={i} country={country} />
+              ))}
+          </div>
+          
+          <Pagination boundaryCount={10} count={count} />
+        </>
+      )
+      : (<Empty />)
   );
 };
 

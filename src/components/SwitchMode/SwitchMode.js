@@ -1,9 +1,10 @@
 import React from "react";
+import styles from "./SwitchMode.module.scss";
+import cx from "classnames";
+import { Sun, Moon } from "react-feather";
 import useDarkMode from "Hooks/useDarkMode";
 import useMedia from "Hooks/useMedia";
 import { responsive } from "utils"
-import styles from "./SwitchMode.module.scss";
-import { Sun, Moon } from "react-feather";
 
 const SwitchMode = (props) => {
   const [theme, setTheme] = useDarkMode();
@@ -18,7 +19,7 @@ const SwitchMode = (props) => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.icon} onClick={handleClick}>
+      <div className={cx(styles.icon, "btn")} onClick={handleClick}>
         <Icon size={18} />
       </div>
       {!isMobile && (

@@ -4,11 +4,6 @@ const useClickOutSide = (ref, callback) => {
   const handleClick = e => {
     if (ref.current && !ref.current.contains(e.target)) {
       callback();
-      console.log(
-        '%cClicked out side',
-        // Styles
-        'background: red; color: white; font-weight: bold'
-      );
     }
   };
 

@@ -3,33 +3,33 @@ import {
   SearchBar,
   Filter,
   Countries,
-  CountryDetail,
-  Pagination,
+  CountryDetail
 } from "components";
 import styles from "./Content.module.scss";
 import { useSelector, getCountrySelected } from "context/selectors";
-import cx from "classnames";
 
 const Content = (props) => {
   const countrySelected = useSelector(getCountrySelected);
 
   return (
-    <div className={cx("container", styles.content)}>
-      {countrySelected ? (
-        <CountryDetail />
-      ) : (
-        <>
-          <div className={styles.flex}>
-            <SearchBar />
-            <Filter />
-          </div>
+    <main className={styles.main}>
+      <div className="container">
+        {countrySelected ? (
+          <CountryDetail />
+        ) : (
+          <>
+            <div className={styles.settings}>
+              <SearchBar />
+              <Filter />
+            </div>
 
-          <Countries />
-
-          <Pagination boundaryCount={10} />
-        </>
-      )}
-    </div>
+            <div className={styles.countries}>
+              <Countries />
+            </div>
+          </>
+        )}
+      </div>
+    </main>
   );
 };
 

@@ -9,11 +9,15 @@ import {
 } from "react-feather";
 
 const PaginationItem = ({ type, page, selected, disabled, onClick }) => {
-  const icon = {
-    first: <ChevronsLeft size={18} />,
-    prev: <ChevronLeft size={18} />,
-    next: <ChevronRight size={18} />,
-    last: <ChevronsRight size={18} />,
+  const icon = (type, props) => {    
+    const icons = {
+      first: <ChevronsLeft {...props} />,
+      prev: <ChevronLeft {...props} />,
+      next: <ChevronRight {...props} />,
+      last: <ChevronsRight {...props} />
+    };
+
+    return icons[type];
   };
 
   
@@ -24,9 +28,13 @@ const PaginationItem = ({ type, page, selected, disabled, onClick }) => {
       className={cx(styles.item, "btn", {
         [styles.active]: selected,
         [styles.disabled]: disabled,
+        [styles.icon]: type !== "page" ,
       })}
     >
-      {type === "page" ? page : icon[type]}
+      {type === "page" 
+        ? page
+        : icon(type, { size: 18 })
+      }
     </span>
   );
 };
