@@ -1,0 +1,23 @@
+@import "assets/base";
+
+.spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .icon {
+    color: $spinner-color;
+  }
+
+  p:not(:empty) {
+    margin-top: 20px;
+    color: $spinner-color;
+    user-select: none;
+  }
+}
